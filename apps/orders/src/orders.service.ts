@@ -8,6 +8,10 @@ export class OrdersService {
     
   }
   
+  getOrders() {
+    return this.ordersRepository.find({});
+  }
+
   async createOrder(request: CreateOrderDto) {
     return this.ordersRepository.create(request);
   }
