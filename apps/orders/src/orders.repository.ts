@@ -1,8 +1,8 @@
-import { AbstractRepository } from "@app/common";
-import { Injectable, Logger } from "@nestjs/common";
-import { InjectConnection, InjectModel } from "@nestjs/mongoose";
-import { Connection, Model } from "mongoose";
-import { Order } from "./schemas/order.schema";
+import { AbstractRepository } from '@app/common';
+import { Injectable, Logger } from '@nestjs/common';
+import { InjectConnection, InjectModel } from '@nestjs/mongoose';
+import { Connection, Model } from 'mongoose';
+import { Order } from './schemas/order.schema';
 
 @Injectable()
 export class OrdersRepository extends AbstractRepository<Order> {
@@ -10,8 +10,8 @@ export class OrdersRepository extends AbstractRepository<Order> {
 
   constructor(
     @InjectModel(Order.name) orderModel: Model<Order>,
-    @InjectConnection() connection: Connection
+    @InjectConnection() connection: Connection,
   ) {
-    super(orderModel, connection)
+    super(orderModel, connection);
   }
 }
